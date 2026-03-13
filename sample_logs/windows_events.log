@@ -1,0 +1,41 @@
+2024-01-15 02:13:45 EventID=4625 SourceIP=192.168.1.105 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 02:13:46 EventID=4625 SourceIP=192.168.1.105 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 02:13:47 EventID=4625 SourceIP=192.168.1.105 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 02:13:48 EventID=4625 SourceIP=192.168.1.105 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 02:13:49 EventID=4625 SourceIP=192.168.1.105 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 02:13:50 EventID=4625 SourceIP=192.168.1.105 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 03:22:10 EventID=4624 SourceIP=10.0.0.55 User=admin Status=Success LogonType=10
+2024-01-15 03:22:15 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=10.0.0.55
+2024-01-15 04:10:33 EventID=4625 SourceIP=172.16.0.200 User=root Status=FailedLogin LogonType=3
+2024-01-15 04:10:34 EventID=4625 SourceIP=172.16.0.200 User=root Status=FailedLogin LogonType=3
+2024-01-15 04:10:35 EventID=4625 SourceIP=172.16.0.200 User=root Status=FailedLogin LogonType=3
+2024-01-15 04:10:36 EventID=4625 SourceIP=172.16.0.200 User=root Status=FailedLogin LogonType=3
+2024-01-15 04:10:37 EventID=4625 SourceIP=172.16.0.200 User=root Status=FailedLogin LogonType=3
+2024-01-15 04:10:38 EventID=4625 SourceIP=172.16.0.200 User=root Status=FailedLogin LogonType=3
+2024-01-15 05:05:12 EventID=4624 SourceIP=203.0.113.10 User=helpdesk Status=Success LogonType=10
+2024-01-15 05:05:20 EventID=4688 ProcessName=powershell.exe ParentProcess=explorer.exe SourceIP=203.0.113.10
+2024-01-15 05:05:24 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=203.0.113.10
+2024-01-15 06:22:45 EventID=4625 SourceIP=198.51.100.25 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 06:23:00 EventID=4625 SourceIP=198.51.100.25 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 06:23:15 EventID=4625 SourceIP=198.51.100.25 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 06:23:30 EventID=4625 SourceIP=198.51.100.25 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 06:23:45 EventID=4625 SourceIP=198.51.100.25 User=Administrator Status=FailedLogin LogonType=3
+2024-01-15 07:10:10 EventID=4688 ProcessName=certutil.exe ParentProcess=cmd.exe SourceIP=10.0.0.88
+2024-01-15 07:11:11 EventID=4624 SourceIP=10.0.0.88 User=remote Status=Success LogonType=10
+2024-01-15 07:11:15 EventID=4688 ProcessName=powershell.exe ParentProcess=winword.exe SourceIP=10.0.0.88
+2024-01-15 08:00:00 EventID=4625 SourceIP=192.0.2.77 User=service Status=FailedLogin LogonType=3
+2024-01-15 08:00:10 EventID=4625 SourceIP=192.0.2.77 User=service Status=FailedLogin LogonType=3
+2024-01-15 08:00:20 EventID=4625 SourceIP=192.0.2.77 User=service Status=FailedLogin LogonType=3
+2024-01-15 08:00:30 EventID=4625 SourceIP=192.0.2.77 User=service Status=FailedLogin LogonType=3
+2024-01-15 08:00:40 EventID=4625 SourceIP=192.0.2.77 User=service Status=FailedLogin LogonType=3
+2024-01-15 09:30:10 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=198.51.100.25
+2024-01-15 10:15:00 EventID=4624 SourceIP=10.0.0.23 User=analyst Status=Success LogonType=2
+2024-01-15 10:20:00 EventID=4688 ProcessName=wscript.exe ParentProcess=cmd.exe SourceIP=10.0.0.23
+2024-01-15 11:45:30 EventID=4625 SourceIP=203.0.113.44 User=admin Status=FailedLogin LogonType=3
+2024-01-15 11:45:40 EventID=4625 SourceIP=203.0.113.44 User=admin Status=FailedLogin LogonType=3
+2024-01-15 11:45:50 EventID=4625 SourceIP=203.0.113.44 User=admin Status=FailedLogin LogonType=3
+2024-01-15 11:46:00 EventID=4625 SourceIP=203.0.113.44 User=admin Status=FailedLogin LogonType=3
+2024-01-15 11:46:10 EventID=4625 SourceIP=203.0.113.44 User=admin Status=FailedLogin LogonType=3
+2024-01-15 12:15:15 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=203.0.113.10
+2024-01-15 13:05:05 EventID=4624 SourceIP=172.16.0.99 User=test Status=Success LogonType=10
+2024-01-15 13:05:07 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=172.16.0.99
