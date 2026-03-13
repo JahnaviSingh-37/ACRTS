@@ -1,15 +1,17 @@
 # ACRTS - Adaptive Cyber Resilience and Automated Threat Neutralization System
-We built a small thing that watches logs, maps stuff to MITRE, and shouts when it sees trouble.
+We built a tool that reads system logs, detects 
+common attacks, maps them to MITRE ATT&CK, and 
+shows everything on a dashboard
 
 ## Team
 | Name | Role |
-| Jahnavi Singh | Lead Developer & System Architect |
+| Jahnavi Singh | Detection Logic & Architecture |
 | Darsh Bindra | Backend Developer & Detection Engine |
 | Aayushi Malik | Database & Report Module Developer |
 | Mohini | Dashboard & Frontend Developer |
 
 ## About This Project
-We are cybersecurity students doing our minor project. We wanted something hands-on while we were learning incident response in class. Jahnavi handled the main system and architecture. The rest of us kept poking at logs and UI until it worked.
+We are cybersecurity students doing our minor project. We wanted something hands-on while we were learning incident response in class. We split responsibilities across system design, backend rules, log parsing, and the UI so everything fit together.
 
 ## What It Does
 Parses plain text logs, spots common attacks, maps them to MITRE, saves them to SQLite, and shows them in a Streamlit dashboard. It also prints demo response actions so we can walk through playbooks in class.
