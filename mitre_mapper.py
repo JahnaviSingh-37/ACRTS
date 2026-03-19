@@ -44,6 +44,12 @@ MITRE_MAPPING = {
         "tactic": "Command and Control",
         "description": "Adversary uses standard protocols for command and control",
     },
+    "Reconnaissance Whisper": {
+        "technique_id": "T1595",
+        "technique_name": "Active Scanning",
+        "tactic": "Reconnaissance",
+        "description": "Adversary quietly maps the application surface with low-frequency probes",
+    },
 }
 
 

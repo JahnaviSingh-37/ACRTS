@@ -39,3 +39,6 @@
 2024-01-15 12:15:15 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=203.0.113.10
 2024-01-15 13:05:05 EventID=4624 SourceIP=172.16.0.99 User=test Status=Success LogonType=10
 2024-01-15 13:05:07 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=172.16.0.99
+2026-03-19 13:59:54 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=45.33.32.156
+2026-03-19 13:59:57 EventID=4688 ProcessName=net.exe ParentProcess=cmd.exe SourceIP=45.33.32.156
+2026-03-19 14:00:00 EventID=4688 ProcessName=powershell.exe ParentProcess=winword.exe SourceIP=45.33.32.156

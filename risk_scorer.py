@@ -17,6 +17,7 @@ BASE_SCORES = {
     "Privilege Escalation": 35,
     "SQL Injection": 25,
     "Port Scanning": 20,
+    "Reconnaissance Whisper": 30,
 }
 
 

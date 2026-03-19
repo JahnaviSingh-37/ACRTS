@@ -53,7 +53,7 @@ def handle_action(incident: dict) -> dict:
     status = "DETECTED"
 
     if incident.get("severity") in {"HIGH", "CRITICAL"}:
-        if incident.get("threat_type") in {"Brute Force", "Port Scanning", "SQL Injection", "RDP Tunneling", "C2C Activity"}:
+        if incident.get("threat_type") in {"Brute Force", "Port Scanning", "SQL Injection", "RDP Tunneling", "C2C Activity", "Reconnaissance Whisper"}:
             action_taken = block_ip(incident.get("ip_address", ""))
             status = "BLOCKED"
         elif incident.get("threat_type") == "Privilege Escalation":

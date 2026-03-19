@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import re
 from collections import defaultdict
+from datetime import datetime, timedelta
 from typing import List, Dict, Union
 
 import config
@@ -28,11 +29,22 @@ SQL_PATTERNS = [
 ]
 
 
+def _parse_apache_timestamp(ts: str) -> datetime | None:
+    """Parse Apache combined log timestamp into datetime or None."""
+    for fmt in ("%d/%b/%Y:%H:%M:%S %z", "%d/%b/%Y:%H:%M:%S"):
+        try:
+            return datetime.strptime(ts, fmt)
+        except ValueError:
+            continue
+    return None
+
+
 def detect_threats(entries: List[Dict[str, str]]) -> List[Dict[str, Union[str, int]]]:
     incidents: List[Dict[str, Union[str, int]]] = []
 
     failed_by_ip = defaultdict(int)
     apache_ports = defaultdict(set)
+    apache_recon = defaultdict(list)
     ip_seen = defaultdict(int)
 
     for entry in entries:
@@ -53,6 +65,16 @@ def detect_threats(entries: List[Dict[str, str]]) -> List[Dict[str, Union[str, i
             match = re.search(r"port=(\d+)", entry.get("raw", ""))
             if match:
                 apache_ports[ip].add(match.group(1))
+
+        # Apache reconnaissance whisper candidate collection
+        if entry.get("log_source") == "apache":
+            apache_recon[ip].append(
+                {
+                    "url": entry.get("url", ""),
+                    "timestamp": entry.get("timestamp", ""),
+                    "status_code": entry.get("status_code", ""),
+                }
+            )
 
     # Brute force detection
     for ip, count in failed_by_ip.items():
@@ -194,5 +216,57 @@ def detect_threats(entries: List[Dict[str, str]]) -> List[Dict[str, Union[str, i
                     "status": "DETECTED",
                 }
             )
+
+    # Reconnaissance Whisper detection in apache logs
+    for ip, records in apache_recon.items():
+        if not records:
+            continue
+
+        urls = [rec.get("url", "") for rec in records if rec.get("url")]
+        unique_urls = set(urls)
+        if len(unique_urls) <= 15:
+            continue
+
+        per_url_counts = defaultdict(int)
+        for url in urls:
+            per_url_counts[url] += 1
+        if any(count > 2 for count in per_url_counts.values()):
+            continue
+
+        if not all(rec.get("status_code") == "200" for rec in records):
+            continue
+
+        parsed_records = [(rec, _parse_apache_timestamp(rec.get("timestamp", ""))) for rec in records]
+        parsed_records = [(rec, ts) for rec, ts in parsed_records if ts]
+        if len(parsed_records) < 2:
+            continue
+        span = max(ts for _, ts in parsed_records) - min(ts for _, ts in parsed_records)
+        if span <= timedelta(hours=3):
+            continue
+
+        latest_record, _ = max(parsed_records, key=lambda pair: pair[1])
+        mitre = get_mitre_details("Reconnaissance Whisper")
+        risk = compute_risk_score(
+            "Reconnaissance Whisper",
+            "HIGH",
+            latest_record.get("timestamp", ""),
+            ip,
+            ip_seen,
+        )
+        incidents.append(
+            {
+                "timestamp": latest_record.get("timestamp", ""),
+                "log_source": "apache",
+                "threat_type": "Reconnaissance Whisper",
+                "ip_address": ip,
+                "severity": risk["severity"],
+                "risk_score": risk["risk_score"],
+                "mitre_technique_id": mitre["technique_id"],
+                "mitre_technique_name": mitre["technique_name"],
+                "mitre_tactic": mitre["tactic"],
+                "action_taken": "PENDING",
+                "status": "DETECTED",
+            }
+        )
 
     return incidents

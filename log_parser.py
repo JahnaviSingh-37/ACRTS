@@ -59,6 +59,11 @@ def _parse_apache_line(line: str) -> Dict[str, str]:
     try:
         ip = line.split(" ", 1)[0]
         timestamp_section = line.split("[")[1].split("]")[0]
+        parts = line.split("\"")
+        request_line = parts[1] if len(parts) > 1 else ""
+        remainder = parts[2].strip() if len(parts) > 2 else ""
+        status_code = remainder.split()[0] if remainder else ""
+        method, url, protocol = (request_line.split() + ["", "", ""])[:3]
     except Exception:
         return {}
     fields = {
@@ -66,7 +71,11 @@ def _parse_apache_line(line: str) -> Dict[str, str]:
         "raw": line.strip(),
         "log_source": "apache",
         "ip_address": ip,
-        "request": line.split('"')[1] if '"' in line else "",
+        "request": request_line,
+        "status_code": status_code,
+        "url": url,
+        "method": method,
+        "protocol": protocol,
     }
     return fields
 
