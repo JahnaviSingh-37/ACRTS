@@ -42,3 +42,12 @@
 2026-03-19 13:59:54 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=45.33.32.156
 2026-03-19 13:59:57 EventID=4688 ProcessName=net.exe ParentProcess=cmd.exe SourceIP=45.33.32.156
 2026-03-19 14:00:00 EventID=4688 ProcessName=powershell.exe ParentProcess=winword.exe SourceIP=45.33.32.156
+2026-04-10 07:05:15 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=45.33.32.156
+2026-04-10 07:05:18 EventID=4688 ProcessName=net.exe ParentProcess=cmd.exe SourceIP=45.33.32.156
+2026-04-10 07:05:21 EventID=4688 ProcessName=powershell.exe ParentProcess=winword.exe SourceIP=45.33.32.156
+2026-05-03 12:26:53 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=45.33.32.156
+2026-05-03 12:26:56 EventID=4688 ProcessName=net.exe ParentProcess=cmd.exe SourceIP=45.33.32.156
+2026-05-03 12:26:59 EventID=4688 ProcessName=powershell.exe ParentProcess=winword.exe SourceIP=45.33.32.156
+2026-05-03 12:27:46 EventID=4688 ProcessName=cmd.exe ParentProcess=powershell.exe SourceIP=45.33.32.156
+2026-05-03 12:27:49 EventID=4688 ProcessName=net.exe ParentProcess=cmd.exe SourceIP=45.33.32.156
+2026-05-03 12:27:52 EventID=4688 ProcessName=powershell.exe ParentProcess=winword.exe SourceIP=45.33.32.156
